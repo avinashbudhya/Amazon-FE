@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: amazon
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: amazon
+  template:
+    metadata:
+      labels:
+        app: amazon
+    spec:
+      containers:
+      - name: amazon
+        image: avinashbudhya/amazon:latest
+        ports:
+        - containerPort: 3000   # Use port 3000
